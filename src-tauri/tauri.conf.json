@@ -12,9 +12,9 @@
   "app": {
     "windows": [
       {
-        "title": "ifp-bus-tools",
-        "width": 800,
-        "height": 600
+        "title": "IFP Bus Tools",
+        "width": 1200,
+        "height": 800
       }
     ],
     "security": {
