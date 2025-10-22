@@ -1,18 +1,38 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import { useAppStore } from '@/stores/index';
+import appSetting from '@/app-setting';
 
-import About from "../views/About.vue";
-import Home from "../views/Home.vue";
-import Terminal from "../views/Terminal.vue";
+import HomeView from '../views/index.vue';
 
-const routes = [
-    { path: '/', name: 'Home', component: Home },
-  { path: '/about', name: 'About', component: About },
-  { path: '/terminal', name: 'Terminal', component: Terminal },
-]
+const routes: RouteRecordRaw[] = [
+    // dashboard
+    { path: '/', name: 'home', component: HomeView },
+];
 
 const router = createRouter({
-  history: createWebHashHistory(), // usa la history API (buono per SPA)
-  routes,
-})
+    history: createWebHistory(),
+    linkExactActiveClass: 'active',
+    routes,
+    scrollBehavior(to, from, savedPosition) {
+        if (savedPosition) {
+            return savedPosition;
+        } else {
+            return { left: 0, top: 0 };
+        }
+    },
+});
 
-export default router
+router.beforeEach((to, from, next) => {
+    const store = useAppStore();
+
+    if (to?.meta?.layout == 'auth') {
+        store.setMainLayout('auth');
+    } else {
+        store.setMainLayout('app');
+    }
+    next(true);
+});
+router.afterEach((to, from, next) => {
+    appSetting.changeAnimation();
+});
+export default router;
