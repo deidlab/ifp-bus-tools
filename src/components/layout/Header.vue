@@ -7,7 +7,7 @@
                         <img class="w-8 ltr:-ml-1 rtl:-mr-1 inline" src="/assets/images/logo.svg" alt="" />
                         <span
                             class="text-2xl ltr:ml-1.5 rtl:mr-1.5 font-semibold align-middle hidden md:inline dark:text-white-light transition-all duration-300"
-                            >VRISTO</span
+                            >IFP Bus Tools</span
                         >
                     </router-link>
 
@@ -19,7 +19,7 @@
                         <icon-menu class="w-5 h-5" />
                     </a>
                 </div>
-                <div class="ltr:mr-2 rtl:ml-2 hidden sm:block">
+                <!-- <div class="ltr:mr-2 rtl:ml-2 hidden sm:block">
                     <ul class="flex items-center space-x-2 rtl:space-x-reverse dark:text-[#d0d2d6]">
                         <li>
                             <router-link
@@ -46,12 +46,12 @@
                             </router-link>
                         </li>
                     </ul>
-                </div>
+                </div> -->
                 <div
                     class="sm:flex-1 ltr:sm:ml-0 ltr:ml-auto sm:rtl:mr-0 rtl:mr-auto flex items-center space-x-1.5 lg:space-x-2 rtl:space-x-reverse dark:text-[#d0d2d6]"
                 >
                     <div class="sm:ltr:mr-auto sm:rtl:ml-auto">
-                        <form
+                        <!-- <form
                             class="sm:relative absolute inset-x-0 sm:top-0 top-1/2 sm:translate-y-0 -translate-y-1/2 sm:mx-0 mx-4 z-10 sm:block hidden"
                             :class="{ '!block': search }"
                             @submit.prevent="search = false"
@@ -81,7 +81,7 @@
                             @click="search = !search"
                         >
                             <icon-search class="w-4.5 h-4.5 mx-auto dark:text-[#d0d2d6]" />
-                        </button>
+                        </button> -->
                     </div>
                     <div>
                         <a
@@ -142,7 +142,7 @@
                         </Popper>
                     </div>
 
-                    <div class="dropdown shrink-0">
+                    <!-- <div class="dropdown shrink-0">
                         <Popper :placement="store.rtlClass === 'rtl' ? 'bottom-start' : 'bottom-end'" offsetDistance="8">
                             <button
                                 type="button"
@@ -203,9 +203,9 @@
                                 </ul>
                             </template>
                         </Popper>
-                    </div>
+                    </div> -->
 
-                    <div class="dropdown shrink-0">
+                    <!-- <div class="dropdown shrink-0">
                         <Popper :placement="store.rtlClass === 'rtl' ? 'bottom-end' : 'bottom-start'" offsetDistance="8">
                             <button
                                 type="button"
@@ -279,20 +279,26 @@
                                 </ul>
                             </template>
                         </Popper>
-                    </div>
+                    </div> -->
 
                     <div class="dropdown shrink-0">
                         <Popper :placement="store.rtlClass === 'rtl' ? 'bottom-end' : 'bottom-start'" offsetDistance="8" class="!block">
-                            <button type="button" class="relative group block">
-                                <img
-                                    class="w-9 h-9 rounded-full object-cover saturate-50 group-hover:saturate-100"
-                                    src="/assets/images/user-profile.jpeg"
-                                    alt=""
-                                />
+                            <button
+                                type="button"
+                                class="relative block p-2 rounded-full bg-white-light/40 dark:bg-dark/40 hover:text-primary hover:bg-white-light/90 dark:hover:bg-dark/60"
+                            >
+                                <icon-bell-bing />
+
+                                <!-- <span class="flex absolute w-3 h-3 ltr:right-0 rtl:left-0 top-0">
+                                    <span
+                                        class="animate-ping absolute ltr:-left-[3px] rtl:-right-[3px] -top-[3px] inline-flex h-full w-full rounded-full bg-success/50 opacity-75"
+                                    ></span>
+                                    <span class="relative inline-flex rounded-full w-[6px] h-[6px] bg-success"></span>
+                                </span> -->
                             </button>
                             <template #content="{ close }">
                                 <ul class="text-dark dark:text-white-dark !py-0 w-[230px] font-semibold dark:text-white-light/90">
-                                    <li>
+                                    <!-- <li>
                                         <div class="flex items-center px-4 py-4">
                                             <div class="flex-none">
                                                 <img class="rounded-md w-10 h-10 object-cover" src="/assets/images/user-profile.jpeg" alt="" />
@@ -306,7 +312,7 @@
                                                 >
                                             </div>
                                         </div>
-                                    </li>
+                                    </li> -->
                                     <li>
                                         <router-link to="/users/profile" class="dark:hover:text-white" @click="close()">
                                             <icon-user class="w-4.5 h-4.5 ltr:mr-2 rtl:ml-2 shrink-0" />
@@ -351,7 +357,7 @@
                         <div class="flex items-center">
                             <icon-menu-dashboard class="shrink-0" />
 
-                            <span class="px-2">{{ $t('dashboard') }}</span>
+                            <span class="px-2">{{ $t('utilities.name') }}</span>
                         </div>
                         <div class="right_arrow">
                             <icon-caret-down />
@@ -359,16 +365,16 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <router-link to="/">{{ $t('sales') }}</router-link>
+                            <router-link to="/utilities/serial_terminal">{{ $t('utilities.serial_terminal') }}</router-link>
                         </li>
                         <li>
-                            <router-link to="/analytics">{{ $t('analytics') }}</router-link>
+                            <router-link to="/utilities/tcp_client">{{ $t('utilities.tcp_client') }}</router-link>
                         </li>
                         <li>
-                            <router-link to="/finance">{{ $t('finance') }}</router-link>
+                            <router-link to="/utilities/tcp_server">{{ $t('utilities.tcp_server') }}</router-link>
                         </li>
                         <li>
-                            <router-link to="/crypto">{{ $t('crypto') }}</router-link>
+                            <router-link to="/utilities/udp_terminal">{{ $t('utilities.udp_terminal') }}</router-link>
                         </li>
                     </ul>
                 </li>
@@ -870,18 +876,10 @@
     import { useAppStore } from '@/stores/index';
 
     import IconMenu from '@/components/icon/icon-menu.vue';
-    import IconCalendar from '@/components/icon/icon-calendar.vue';
-    import IconEdit from '@/components/icon/icon-edit.vue';
-    import IconChatNotification from '@/components/icon/icon-chat-notification.vue';
-    import IconSearch from '@/components/icon/icon-search.vue';
-    import IconXCircle from '@/components/icon/icon-x-circle.vue';
     import IconSun from '@/components/icon/icon-sun.vue';
     import IconMoon from '@/components/icon/icon-moon.vue';
     import IconLaptop from '@/components/icon/icon-laptop.vue';
-    import IconMailDot from '@/components/icon/icon-mail-dot.vue';
-    import IconArrowLeft from '@/components/icon/icon-arrow-left.vue';
-    import IconInfoCircle from '@/components/icon/icon-info-circle.vue';
-    import IconBellBing from '@/components/icon/icon-bell-bing.vue';
+    import IconBellBing from '@/components/icon/icon-settings.vue';
     import IconUser from '@/components/icon/icon-user.vue';
     import IconMail from '@/components/icon/icon-mail.vue';
     import IconLockDots from '@/components/icon/icon-lock-dots.vue';

@@ -1,0 +1,1 @@
+<template>Serial Terminal</template>

@@ -1,5 +1,11 @@
 {
-    "dashboard": "Dashboard",
+    "utilities": {
+        "name": "Utilities",
+        "serial_terminal": "Serial Port Terminal",
+        "tcp_client": "TCP Client",
+        "tcp_server": "TCP Server",
+        "udp_terminal": "UDP Terminal"
+    },
     "sales": "Sales",
     "analytics": "Analytics",
     "apps": "Apps",
