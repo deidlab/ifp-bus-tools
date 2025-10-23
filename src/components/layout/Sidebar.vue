@@ -13,7 +13,7 @@
             />
             <span
               class="text-2xl ltr:ml-1.5 rtl:mr-1.5 font-semibold align-middle lg:inline dark:text-white-light"
-              >VRISTO</span
+              >IFP Bus Tools</span
             >
           </router-link>
           <a
@@ -36,12 +36,12 @@
               class="py-3 px-7 flex items-center uppercase font-extrabold bg-white-light/30 dark:bg-dark dark:bg-opacity-[0.08] -mx-4 mb-1"
             >
               <icon-minus class="w-4 h-5 flex-none hidden" />
-              <span>{{ $t("tables_and_forms") }}</span>
+              <span>{{ $t("utilities.name") }}</span>
             </h2>
 
             <li class="menu nav-item">
               <router-link
-                to="/tables"
+                to="/utilities/serial_terminal"
                 class="nav-link group"
                 @click="toggleMobileMenu"
               >
@@ -52,118 +52,67 @@
 
                   <span
                     class="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark"
-                    >{{ $t("tables") }}</span
+                    >{{ $t("utilities.serial_terminal") }}</span
                   >
                 </div>
               </router-link>
             </li>
 
             <li class="menu nav-item">
-              <button
-                type="button"
-                class="nav-link group w-full"
-                :class="{ active: activeDropdown === 'datatables' }"
-                @click="
-                  activeDropdown === 'datatables'
-                    ? (activeDropdown = null)
-                    : (activeDropdown = 'datatables')
-                "
+              <router-link
+                to="/utilities/tcp_client"
+                class="nav-link group"
+                @click="toggleMobileMenu"
               >
                 <div class="flex items-center">
-                  <icon-menu-datatables
+                  <icon-menu-tables
                     class="group-hover:!text-primary shrink-0"
                   />
 
                   <span
                     class="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark"
-                    >{{ $t("datatables") }}</span
+                    >{{ $t("utilities.tcp_client") }}</span
                   >
                 </div>
-                <div
-                  :class="{
-                    'rtl:rotate-90 -rotate-90': activeDropdown !== 'datatables',
-                  }"
-                >
-                  <icon-caret-down />
-                </div>
-              </button>
-              <vue-collapsible :isOpen="activeDropdown === 'datatables'">
-                <ul class="sub-menu text-gray-500">
-                  <li>
-                    <router-link
-                      to="/datatables/basic"
-                      @click="toggleMobileMenu"
-                      >{{ $t("basic") }}</router-link
-                    >
-                  </li>
-                  <li>
-                    <router-link
-                      to="/datatables/advanced"
-                      @click="toggleMobileMenu"
-                      >{{ $t("advanced") }}</router-link
-                    >
-                  </li>
-                  <li>
-                    <router-link
-                      to="/datatables/skin"
-                      @click="toggleMobileMenu"
-                      >{{ $t("skin") }}</router-link
-                    >
-                  </li>
-                </ul>
-              </vue-collapsible>
+              </router-link>
             </li>
 
             <li class="menu nav-item">
-              <button
-                type="button"
-                class="nav-link group w-full"
-                :class="{ active: activeDropdown === 'forms' }"
-                @click="
-                  activeDropdown === 'forms'
-                    ? (activeDropdown = null)
-                    : (activeDropdown = 'forms')
-                "
+              <router-link
+                to="/utilities/tcp_server"
+                class="nav-link group"
+                @click="toggleMobileMenu"
               >
                 <div class="flex items-center">
-                  <icon-menu-forms class="group-hover:!text-primary shrink-0" />
+                  <icon-menu-tables
+                    class="group-hover:!text-primary shrink-0"
+                  />
 
                   <span
                     class="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark"
-                    >{{ $t("forms") }}</span
+                    >{{ $t("utilities.tcp_server") }}</span
                   >
                 </div>
-                <div
-                  :class="{
-                    'rtl:rotate-90 -rotate-90': activeDropdown !== 'forms',
-                  }"
-                >
-                  <icon-caret-down />
+              </router-link>
+            </li>
+
+            <li class="menu nav-item">
+              <router-link
+                to="/utilities/udp_terminal"
+                class="nav-link group"
+                @click="toggleMobileMenu"
+              >
+                <div class="flex items-center">
+                  <icon-menu-tables
+                    class="group-hover:!text-primary shrink-0"
+                  />
+
+                  <span
+                    class="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark"
+                    >{{ $t("utilities.udp_terminal") }}</span
+                  >
                 </div>
-              </button>
-              <vue-collapsible :isOpen="activeDropdown === 'forms'">
-                <ul class="sub-menu text-gray-500">
-                  <li>
-                    <router-link to="/forms/basic" @click="toggleMobileMenu">{{
-                      $t("basic")
-                    }}</router-link>
-                  </li>
-                  <li>
-                    <router-link
-                      to="/forms/input-group"
-                      @click="toggleMobileMenu"
-                      >{{ $t("input_group") }}</router-link
-                    >
-                  </li>
-                  <li>
-                    <router-link
-                      to="/forms/layouts"
-                      @click="toggleMobileMenu"
-                      >{{ $t("layouts") }}</router-link
-                    >
-                  </li>
-                </ul>
-              </vue-collapsible>
+              </router-link>
             </li>
 
             <h2
