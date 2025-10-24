@@ -204,7 +204,7 @@
           </a>
           <ul class="sub-menu">
             <li>
-              <router-link to="/utilities/serial_terminal">{{
+              <router-link to="/utilities/serial/terminal">{{
                 $t("utilities.serial_terminal")
               }}</router-link>
             </li>

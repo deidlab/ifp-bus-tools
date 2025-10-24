@@ -141,7 +141,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 import { invoke } from "@tauri-apps/api/core";
-import Setting from "@/components/ThemeCustomizer.vue";
+import Setting from "@/views/utilities/serial/settings.vue";
 import "@suadelabs/vue3-multiselect/dist/vue3-multiselect.css";
 
 const portOpened = ref(false);
